@@ -1,0 +1,84 @@
+﻿.a-cleanup{
+    color: inherit;
+    display: inline-block;
+}
+
+.a-cleanup::after hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*
+.card-img-custom {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+}
+*/
+
+.store-card {
+    transition: all 0.2s ease;
+}
+
+.store-card:hover {
+     transform: scale(1.03);
+     box-shadow: lightgray 2px 5px 5px 2px;
+}
+
+.wrapper {
+    transition: all 200ms ease-in-out;
+}
+
+.img-wrapper {
+    transition: all 200ms ease-in-out;
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+}
+
+/*for revealing genre of a book*/
+
+.a-cleanup .book-genre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.a-cleanup:hover .book-genre {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.store-btn {
+    transition: all 0.2s ease;
+}
+
+.store-btn:hover {
+    background-color: rgb(224,224,224);
+    border: 1px solid rgb(224,224,224);
+
+}
+
+a.btn-edit {
+    background-color: rgb(152,129,123) !important;
+}
+
+a.btn-details {
+    background-color: rgb(186,170,166) !important;
+}
+
+a.btn-delete {
+    background-color: rgb(185,88,84) !important;
+}

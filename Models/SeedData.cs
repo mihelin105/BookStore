@@ -52,8 +52,56 @@ namespace BookStore.Models
                         Price = 17,
                         Author = "Ocean Voung",
                         imageUrl = "https://znanje.hr/product-images/8c86657b-4880-4715-96be-acf7209d1217.jpg"
-                    }
-                    );
+                    },
+
+					new Book
+					{
+						Title = "A Little Life",
+						Description = "Test",
+						Language = "English",
+						ISBN = "9780804172707",
+						DatePublished = DateTime.ParseExact("2015-1-1", "yyyy-M-d", CultureInfo.InvariantCulture),
+						Price = 20,
+						Author = "Hanya Yanagihara",
+						imageUrl = "https://znanje.hr/product-images/6ca430f9-06c0-47ad-b8c8-117917b6ebe8.jpg"
+					},
+
+					new Book
+					{
+						Title = "No Longer Human",
+						Description = "Test",
+						Language = "English",
+						ISBN = "9780811204811",
+						DatePublished = DateTime.ParseExact("1948-1-1", "yyyy-M-d", CultureInfo.InvariantCulture),
+						Price = 17,
+						Author = "Osamu Dazai",
+						imageUrl = "https://znanje.hr/product-images/36859b2b-f0ac-4251-978b-509ab891f351.jpg"
+					},
+
+					new Book
+					{
+						Title = "White Nights",
+						Description = "Test",
+						Language = "English",
+						ISBN = "9780241252086",
+						DatePublished = DateTime.ParseExact("1848-1-1", "yyyy-M-d", CultureInfo.InvariantCulture),
+						Price = 5,
+						Author = " Fyodor Dostoevsky",
+						imageUrl = "https://znanje.hr/product-images/db2e393a-dee8-49f4-b1df-bbaa96019a4e.jpg"
+					},
+
+					new Book
+					{
+						Title = "The Catcher in the Rye",
+						Description = "Test",
+						Language = "English",
+						ISBN = "9780241984758",
+						DatePublished = DateTime.ParseExact("1951-6-16", "yyyy-M-d", CultureInfo.InvariantCulture),
+						Price = 20,
+						Author = "J. D. Salinger",
+						imageUrl = "https://m.media-amazon.com/images/I/91fQEUwFMyL.jpg"
+					}
+					);
 
                 context.SaveChanges();
             }
