@@ -14,7 +14,7 @@
 				<a class="a-cleanup" asp-controller="Store" asp-action="Details" asp-route-id="@book.Id">
 
 						<img src="@book.imageUrl" class="card-img-top card-img-custom img-wrapper" /> 
-						<div class="book-genre">Young Adult</div>
+						<div class="book-genre">@book.Genre</div>
 				</a>
 
 					<div class="card-body" style="height: 6em">
@@ -22,7 +22,7 @@
 					</div>
 					<div class="card-body">
 						<span class="card-text">@book.Price.ToString("c")</span>
-						<a asp-controller="" asp-action="" asp-route-id="@book.Id" class="btn btn-edit float-right"><i class="fa-brands fa-opencart"></i></a>
+						<a asp-controller="" asp-action="" asp-route-id="@book.Id" class="btn btn-edit float-right store-btn"><i class="fa-brands fa-opencart"></i></a>
 					</div>
 			</div>
 		</div>

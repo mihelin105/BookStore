@@ -7,6 +7,10 @@ namespace BookStore.Models
     {
         public int Id { get; set; }
 
+        // add genre and connect it to css for revealing books genre
+        [Required]
+        public string Genre { get; set; }
+
         [Required]
         public string Title { get; set; }
 
