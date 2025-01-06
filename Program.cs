@@ -10,6 +10,18 @@ builder.Services.AddDbContext<BookStoreContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BookStoreContext") 
     ?? throw new InvalidOperationException("Connection string 'BookStoreContext' not found.")));
 
+builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddSession(options =>
+{
+    options.Cookie.HttpOnly = true; // dostupno samo tijekom HTTP protokola
+    options.Cookie.IsEssential = true;
+    options.IdleTimeout = TimeSpan.FromSeconds(10);
+});
+
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<Cart>(sp => Cart.GetCart(sp));
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -48,8 +60,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseSession();
+
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Store}/{action=Index}/{id?}");
 
 app.Run();

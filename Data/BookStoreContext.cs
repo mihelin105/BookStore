@@ -15,5 +15,6 @@ namespace BookStore.Data
         }
 
         public DbSet<Book> Books { get; set; } = default!;
+        public DbSet<CartItem> CartItems { get; set; } 
     }
 }
