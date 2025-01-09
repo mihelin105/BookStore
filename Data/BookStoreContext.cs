@@ -7,6 +7,7 @@ using BookStore.Models;
 
 namespace BookStore.Data
 {
+    //  interact with the database through Entity Framework
     public class BookStoreContext : DbContext
     {
         public BookStoreContext (DbContextOptions<BookStoreContext> options)

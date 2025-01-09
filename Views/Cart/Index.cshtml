@@ -16,7 +16,7 @@
 		<tbody>
 			@foreach(var item in Model.CartItems)
 			{
-				var bookTotal = item.Book.Price = item.Quantity;
+				var bookTotal = item.Book.Price * item.Quantity;
 				<tr>
 					<td>
 						<img src="@item.Book.imageUrl" style="height: 4em" />

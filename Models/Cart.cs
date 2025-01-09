@@ -42,6 +42,49 @@ namespace BookStore.Models
 
         }
 
+        public CartItem GetCartItem(Book book)
+        {
+            /*
+             koristenje LINQ za kreiranje upita prema CartItem u _context.CartItem kao izvor podataka
+
+            SingleOrDefault LINQ metoda koja trazi jedan element u kolekciji , ako postoji vise od 1 onda baca ERROR, ako nema onda null
+            ono se izvrsava nad bazom podataka 
+            --
+            SELECT TOP 1 *
+            FROM CartItems
+            WHERE BookId = @bookId AND CartId = @cartId
+            --
+
+            ci.Book.Id == book.Id && ci.CartId == Id je filter : provjerava je li ID knjige isti onome koji se prosljeduje metodi, 
+            a CardID provjerava sesiju korisnika
+             */
+            return _context.CartItems.SingleOrDefault(ci =>
+            ci.Book.Id == book.Id && ci.CartId == Id);
+        }
+        public void AddToCart(Book book, int quantity)
+        {
+            // gleda je li knjiga vec u kosarici
+            var cartItem = GetCartItem(book);
+
+            if(cartItem == null) // ako jos nije u kosarici
+            {
+                cartItem = new CartItem
+                {
+                    Book = book,
+                    Quantity = quantity,
+                    CartId = Id
+
+                };
+
+                _context.CartItems.Add(cartItem);
+            }
+            else // ako vec je u kosarici dodaj na existing 
+            {
+                cartItem.Quantity += quantity;
+            }
+            _context.SaveChanges();
+        }
+
         public List<CartItem> GetAllCartItems()
         {
             return CartItems ?? 
