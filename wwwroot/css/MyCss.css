@@ -75,6 +75,7 @@ a.btn-edit {
     background-color: rgb(152,129,123) !important;
 }
 
+
 a.btn-details {
     background-color: rgb(186,170,166) !important;
 }
@@ -82,3 +83,29 @@ a.btn-details {
 a.btn-delete {
     background-color: rgb(185,88,84) !important;
 }
+
+
+div.order-btn {
+    background-color: #e69a9a !important; 
+    color: white !important; 
+    padding: 10px 20px;
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+    div.order-btn:hover {
+        background-color: #bb7676; 
+    }
+
+div.remove-cart-btn {
+    background-color: #ff6c75 !important; 
+    color: white !important; 
+    padding: 10px 20px; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; 
+}
+    div.remove-cart-btn:hover {
+        background-color: #ff5560; 
+    }

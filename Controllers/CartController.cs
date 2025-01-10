@@ -33,6 +33,7 @@ namespace BookStore.Controllers
         }
 
 
+
         // adds a book to a cart by its ID
         public IActionResult AddToCart(int id)
         {
@@ -44,6 +45,46 @@ namespace BookStore.Controllers
 
             }
             return RedirectToAction("Index");
+        }
+
+
+        public IActionResult RemoveFromCart(int id)
+        {
+            var selectedBook = GetBookId(id);
+            if (selectedBook != null)
+            {
+                _cart.RemoveFromCart(selectedBook);
+            }
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult ReduceQuantity(int id)
+        {
+            var selectedBook = GetBookId(id);
+            if (selectedBook != null)
+            {
+                _cart.ReduceQuantity(selectedBook);
+            }
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult IncreaseQuantity(int id)
+        {
+            var selectedBook = GetBookId(id);
+            if (selectedBook != null)
+            {
+                _cart.IncreaseQuantity(selectedBook);
+            }
+            return RedirectToAction("Index");
+
+        }
+
+        public IActionResult ClearCart()
+        {
+            _cart.ClearCart();
+
+            return RedirectToAction("Index");
+
         }
 
         // gets the book by its id from the database
