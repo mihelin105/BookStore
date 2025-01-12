@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using BookStore.Models;
 
 namespace BookStore.Data
 {
     //  interact with the database through Entity Framework
-    public class BookStoreContext : DbContext
+    public class BookStoreContext : IdentityDbContext<DefaultUser>
     {
         public BookStoreContext (DbContextOptions<BookStoreContext> options)
             : base(options)
