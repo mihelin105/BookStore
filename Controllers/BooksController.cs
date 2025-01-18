@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using BookStore.Data;
 using BookStore.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BookStore.Controllers
 {
@@ -19,13 +20,15 @@ namespace BookStore.Controllers
             _context = context;
         }
 
-        // GET: Books
+        // GET: Books (restricted to Admins)
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Books.ToListAsync());
         }
 
-        // GET: Books/Details/5
+
+        // GET: Books/Details/5 (accessible to everyone)
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

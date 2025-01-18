@@ -1,6 +1,7 @@
 ﻿using BookStore.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
+using Microsoft.AspNetCore.Identity;
 
 namespace BookStore.Models
 {
@@ -128,7 +129,49 @@ namespace BookStore.Models
 
                 context.SaveChanges();
             }
+            SeedRolesAndUsers(serviceProvider).Wait();
         }
+
+        public static async Task SeedRolesAndUsers(IServiceProvider serviceProvider)
+        {
+            var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+            var userManager = serviceProvider.GetRequiredService<UserManager<DefaultUser>>();
+
+            // Seed Roles
+            if (!await roleManager.RoleExistsAsync("Admin"))
+            {
+                await roleManager.CreateAsync(new IdentityRole("Admin"));
+            }
+
+            // Seed Admin User
+            var adminEmail = "admin@site.com";
+            var adminUser = await userManager.FindByEmailAsync(adminEmail);
+
+            if (adminUser == null)
+            {
+                var user = new DefaultUser
+                {
+                    UserName = adminEmail,
+                    Email = adminEmail,
+                    EmailConfirmed = true,
+                    FirstName = "Admin",
+                    LastName = "User",
+                    Address = "123 Admin St",
+                    City = "AdminCity",
+                    ZipCode = "12345",
+                    UserCreationDate = DateTime.Now
+                };
+
+                var result = await userManager.CreateAsync(user, "Admin@123");
+                if (result.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(user, "Admin");
+                }
+            }
+        }
+
+
+
 
     }
 }

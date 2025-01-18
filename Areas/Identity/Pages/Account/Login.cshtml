@@ -6,6 +6,23 @@
 }
 
 <h1>@ViewData["Title"]</h1>
+
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <p>Welcome back, @User.Identity.Name!</p>
+
+    @if (User.IsInRole("Admin"))
+    {
+        <p>
+            You have admin privileges. Access the
+            <a asp-area="" asp-controller="Books" asp-action="Index">Book List</a>.
+        </p>
+    }
+}
+else
+{
+    <p>Please log in to access the site.</p>
+}
 <div class="row">
     <div class="col-md-4">
         <section>
