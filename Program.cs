@@ -39,7 +39,7 @@ builder.Services.AddDefaultIdentity<DefaultUser>(options =>
     options.Password.RequireUppercase = true;
     options.Password.RequireLowercase = true;
     options.Password.RequireNonAlphanumeric = false; // Optional
-})
+}).AddRoles<IdentityRole>()
 .AddRoles<IdentityRole>() // Register role support
 .AddEntityFrameworkStores<BookStoreContext>(); // Use your DbContext for Identity
 

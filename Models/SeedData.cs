@@ -112,8 +112,47 @@ namespace BookStore.Models
                         Author = "J. D. Salinger",
                         Genre = "Novel",
                         imageUrl = "https://m.media-amazon.com/images/I/91fQEUwFMyL.jpg"
+                    },
+
+                    new Book
+                    {
+                        Title = "Normal People",
+                        Description = "test.",
+                        Language = "English",
+                        ISBN = "9780571334667",
+                        DatePublished = DateTime.ParseExact("2018-8-28", "yyyy-M-d", CultureInfo.InvariantCulture),
+                        Price = 22,
+                        Author = "Sally Rooney",
+                        Genre = "Novel",
+                        imageUrl = "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1571423190i/41057294.jpg"
+                    },
+
+                    new Book
+                    {
+                        Title = "The Secret History",
+                        Description = "test",
+                        Language = "English",
+                        ISBN = "9781470031702",
+                        DatePublished = DateTime.ParseExact("2011-8-10", "yyyy-M-d", CultureInfo.InvariantCulture),
+                        Price = 24,
+                        Author = "Donna Tartt",
+                        Genre = "Novel",
+                        imageUrl = "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1451554846i/29044.jpg"
+                    },
+
+                    new Book
+                    {
+                        Title = "Frankenstein",
+                        Description = "test.",
+                        Language = "English",
+                        ISBN = "9789400001702",
+                        DatePublished = DateTime.ParseExact("1888-1-1", "yyyy-M-d", CultureInfo.InvariantCulture),
+                        Price = 24,
+                        Author = "Mary Wollstonecraft Shelley",
+                        Genre = "Gothic novel",
+                        imageUrl = "https://m.media-amazon.com/images/I/81AuVq270jL._UF1000,1000_QL80_.jpg"
                     }
-                    
+
                 };
 
 
