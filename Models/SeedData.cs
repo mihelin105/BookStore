@@ -194,10 +194,10 @@ namespace BookStore.Models
                     Email = adminEmail,
                     EmailConfirmed = true,
                     FirstName = "Admin",
-                    LastName = "User",
-                    Address = "123 Admin St",
-                    City = "AdminCity",
-                    ZipCode = "12345",
+                    LastName = "Admission",
+                    Address = "Kalverstraat",
+                    City = "Amsterdam",
+                    ZipCode = "1012",
                     UserCreationDate = DateTime.Now
                 };
 

@@ -60,6 +60,7 @@ using (var scope = app.Services.CreateScope())
     {
         // Initialize the database with seed data
         SeedData.Initialize(services);
+
     }
     catch (Exception ex)
     {
