@@ -109,3 +109,9 @@ div.remove-cart-btn {
     div.remove-cart-btn:hover {
         background-color: #ff5560; 
     }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
