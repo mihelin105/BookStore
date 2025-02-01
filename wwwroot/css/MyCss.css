@@ -1,11 +1,11 @@
-﻿/* 🌿 General Page Background */
+﻿/* General Page Background */
 body {
     background-color: #F5ECE0; /* Soft beige */
     color: #5A4635; /* Dark brown text */
     font-family: 'Georgia', serif;
 }
 
-/* 📌 Navbar Styling */
+/* Navbar Styling */
 .navbar {
     background-color: #5A4635 !important; /* Dark brown navbar */
     padding: 15px;
@@ -20,7 +20,7 @@ body {
     max-height: 60px; /* Adjusts logo size */
 }
 
-/* 🔍 Search Bar */
+/* Search Bar */
 .search-bar {
     background-color: #F5ECE0; /* Light beige */
     border: 2px solid #8B5E3B; /* Darker brown border */
@@ -33,7 +33,7 @@ body {
         color: #8B5E3B; /* Dark brown text */
     }
 
-/* 🎯 Search Button */
+/*  Search Button */
 .btn-search {
     background-color: #8B5E3B;
     color: white;
@@ -46,7 +46,7 @@ body {
         background-color: #6F4E37; /* Slightly darker brown */
     }
 
-/* 🛒 Cart Button */
+/* Cart Button */
 .cart-button {
     background-color: #6F4E37;
     color: white;
@@ -66,7 +66,7 @@ body {
         right: -5px;
     }
 
-/* 🏷️ Buttons */
+/* Buttons */
 .btn-primary {
     background-color: #E6D5B8; /* Beige */
     color: #5A4635;
@@ -87,7 +87,7 @@ body {
         background-color: #5A3C25;
     }
 
-/* 📚 Store Section */
+/* Store Section */
 .store-container {
     background-color: white;
     padding: 20px;
@@ -97,7 +97,7 @@ body {
 
 
 
-/*NEW*/
+/*old css*/
 
 .a-cleanup{
     color: inherit;
