@@ -84,6 +84,7 @@ namespace BookStore.Areas.Identity.Pages.Account.Manage
 
             [Phone]
             [Display(Name = "Phone number")]
+            [RegularExpression(@"^\d{10,15}$", ErrorMessage = "Phone number must contain only digits and be between 10 to 15 characters long.")]
             public string PhoneNumber { get; set; }
         }
 

@@ -42,6 +42,12 @@ builder.Services.AddDefaultIdentity<DefaultUser>(options =>
 .AddRoles<IdentityRole>() // Register role support
 .AddEntityFrameworkStores<BookStoreContext>(); // Use your DbContext for Identity
 
+// handles unathorized access !
+/**builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.AccessDeniedPath = "/Home/AccessDenied"; // Redirect to custom page
+});**/
+
 var app = builder.Build();
 /*using (var scope = app.Services.CreateScope())
 {

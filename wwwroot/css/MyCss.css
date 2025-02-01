@@ -1,4 +1,105 @@
-﻿.a-cleanup{
+﻿/* 🌿 General Page Background */
+body {
+    background-color: #F5ECE0; /* Soft beige */
+    color: #5A4635; /* Dark brown text */
+    font-family: 'Georgia', serif;
+}
+
+/* 📌 Navbar Styling */
+.navbar {
+    background-color: #5A4635 !important; /* Dark brown navbar */
+    padding: 15px;
+}
+
+    .navbar a {
+        color: #E6D5B8 !important; /* Beige text */
+        font-size: 18px;
+    }
+
+.navbar-brand img {
+    max-height: 60px; /* Adjusts logo size */
+}
+
+/* 🔍 Search Bar */
+.search-bar {
+    background-color: #F5ECE0; /* Light beige */
+    border: 2px solid #8B5E3B; /* Darker brown border */
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+    .search-bar::placeholder {
+        color: #8B5E3B; /* Dark brown text */
+    }
+
+/* 🎯 Search Button */
+.btn-search {
+    background-color: #8B5E3B;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+    .btn-search:hover {
+        background-color: #6F4E37; /* Slightly darker brown */
+    }
+
+/* 🛒 Cart Button */
+.cart-button {
+    background-color: #6F4E37;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    position: relative;
+}
+
+    .cart-button .cart-count {
+        background-color: #E6D5B8;
+        color: #5A4635;
+        font-weight: bold;
+        padding: 4px 8px;
+        border-radius: 50%;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+    }
+
+/* 🏷️ Buttons */
+.btn-primary {
+    background-color: #E6D5B8; /* Beige */
+    color: #5A4635;
+    border: none;
+}
+
+    .btn-primary:hover {
+        background-color: #D9C4A7;
+    }
+
+.btn-secondary {
+    background-color: #6F4E37; /* Warm brown */
+    color: white;
+    border: none;
+}
+
+    .btn-secondary:hover {
+        background-color: #5A3C25;
+    }
+
+/* 📚 Store Section */
+.store-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/*NEW*/
+
+.a-cleanup{
     color: inherit;
     display: inline-block;
 }
@@ -115,3 +216,34 @@ input[type=number]::-webkit-outer-spin-button{
     -webkit-appearance: none;
     margin: 0;
 }
+
+.bg-light {
+    border-bottom: 2px solid #ddd; /* Light gray border */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* More visible shadow */
+    padding: 15px; /* Adds space inside the box */
+}
+
+/* Make the filter button a nice beige */
+button.btn-primary {
+    background-color: #E6D5B8; /* Soft beige */
+    border-color: #D9C4A7; /* Slightly darker beige */
+    color: #5A4635; /* Dark brown text */
+}
+
+    .btn-primary:hover {
+        background-color: #D9C4A7; /* Slightly darker beige on hover */
+        border-color: #C7B299;
+    }
+
+/* Make the clear button brown */
+a.btn-secondary {
+    background-color: #6F4E37; /* Warm brown */
+    border-color: #5A3C25;
+    color: white; /* White text for contrast */
+}
+
+    .btn-secondary:hover {
+        background-color: #5A3C25; /* Darker brown on hover */
+        border-color: #4E3220;
+    }
+

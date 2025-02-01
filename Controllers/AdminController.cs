@@ -1,11 +1,14 @@
 ﻿using BookStore.Models;
 using BookStore.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.Controllers
 {
-    public class AdminController : Controller
+
+	[Authorize(Roles = "Admin")]
+	public class AdminController : Controller
     {
 
         private readonly RoleManager<IdentityRole> _roleManager;

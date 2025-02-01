@@ -25,20 +25,17 @@ namespace BookStore.Controllers
                 books = books.Where(b => b.Title.Contains(searchString) || b.Author.Contains(searchString));
             }
 
-            if(!string.IsNullOrEmpty(minPrice) )
+            // handles the parsing for max value
+
+            if (!string.IsNullOrEmpty(minPrice) && int.TryParse(minPrice, out int min))
             {
-                var min = int.Parse(minPrice);
                 books = books.Where(b => b.Price >= min);
             }
 
-			if (!string.IsNullOrEmpty(maxPrice))
-			{
-				var max = int.Parse(minPrice);
-				books = books.Where(b => b.Price <= max);
-			}
-
-
-
+            if (!string.IsNullOrEmpty(maxPrice) && int.TryParse(maxPrice, out int max))
+            {
+                books = books.Where(b => b.Price <= max);
+            }
 
 			return View(await books.ToListAsync());
         }

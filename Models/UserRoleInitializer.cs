@@ -23,7 +23,7 @@ namespace BookStore.Models
                 }
             }
 
-            var email = "admin@site.com";
+            /**var email = "admin@site.com";
             var password = "Admin@123";
 
             if(userManager.FindByEmailAsync(email).Result == null)
@@ -45,7 +45,7 @@ namespace BookStore.Models
                 {
                     userManager.AddToRoleAsync(user, "Admin").Wait();
                 }
-            }
+            }**/
 
         }
 

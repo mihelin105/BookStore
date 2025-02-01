@@ -26,6 +26,7 @@ namespace BookStore.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<DefaultUser> _signInManager;
         private readonly UserManager<DefaultUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IUserStore<DefaultUser> _userStore;
         private readonly IUserEmailStore<DefaultUser> _emailStore;
         private readonly ILogger<RegisterModel> _logger;
@@ -36,7 +37,8 @@ namespace BookStore.Areas.Identity.Pages.Account
             IUserStore<DefaultUser> userStore,
             SignInManager<DefaultUser> signInManager,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailSender emailSender,
+            RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -44,6 +46,7 @@ namespace BookStore.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            _roleManager = roleManager;
         }
 
         /// <summary>
@@ -160,9 +163,22 @@ namespace BookStore.Areas.Identity.Pages.Account
                 // Create the user in the database
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+
+                    // Assign "Admin" role if the email is admin@site.com
+                    if (user.Email == "admin@site.com")
+                    {
+                        if (!await _roleManager.RoleExistsAsync("Admin"))
+                        {
+                            await _roleManager.CreateAsync(new IdentityRole("Admin"));
+                        }
+
+                        await _userManager.AddToRoleAsync(user, "Admin");
+                    }
+
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);

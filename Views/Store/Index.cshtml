@@ -5,20 +5,39 @@
 }
 
 <h2 class="my-4">Store</h2>
+<div class="bg-light py-3">
+    <div class="container">
+        <form asp-action="Index" method="get">
+            <div class="row align-items-center">
+                <!-- Search Input -->
+                <div class="col-md-5">
+                    <input type="text" class="form-control" name="searchString" placeholder="Search by Title or Author">
+                </div>
 
-<form asp-action="Index" class="col-2 my-1 p-2">
-	<div>
-		Filter Search
-		<div class="my-1">
-			<input type="text" name="searchString" placeholder="Title or Author" class="form-control-sm col-12" />
-		</div>
-		<div class="my-1">
-			<input type="number" name="minPrice" step="1" placeholder="$min" class="form-control-sm col-5" />&nbsp;&#8212;&nbsp;<input type="number" name="maxPrice" step="1" placeholder="$max" class="form-control-sm col-5" />&nbsp;&#8212;&nbsp;
-		</div>
-		<input type="submit" value="Filter" class="btn btn-primary" />
-		<a asp-action="Index" class="btn btn-secondary float-right"> Clear</a>
-	</div>
-</form>
+                <!-- Min Price -->
+                <div class="col-md-2">
+                    <input type="number" class="form-control" name="minPrice" placeholder="Min Price">
+                </div>
+
+                <!-- Max Price -->
+                <div class="col-md-2">
+                    <input type="number" class="form-control" name="maxPrice" placeholder="Max Price">
+                </div>
+
+                <!-- Buttons -->
+                <div class="col-md-3 d-flex">
+                    <button type="submit" class="btn btn-primary me-2 w-50">Filter</button>
+                    <a href="/Store" class="btn btn-secondary w-50">Clear</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
 
 <div class="row">
 	@foreach(var book in Model)
