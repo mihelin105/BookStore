@@ -68,7 +68,7 @@ namespace BookStore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Books");
+                    b.ToTable("Books", (string)null);
                 });
 
             modelBuilder.Entity("BookStore.Models.CartItem", b =>
@@ -93,7 +93,7 @@ namespace BookStore.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.ToTable("CartItems");
+                    b.ToTable("CartItems", (string)null);
                 });
 
             modelBuilder.Entity("BookStore.Models.DefaultUser", b =>
@@ -200,7 +200,7 @@ namespace BookStore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("BookStore.Models.OrderItem", b =>
@@ -229,7 +229,7 @@ namespace BookStore.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookStore.Models
 {
@@ -9,12 +10,13 @@ namespace BookStore.Models
 
         [PersonalData]
         public string LastName { get; set; }
-
+            
         [PersonalData]
         public string Address { get; set; }
 
-        [PersonalData]
-        public string ZipCode { get; set; }
+		[PersonalData]
+		//[RegularExpression(@"^\d+$", ErrorMessage = "ZipCode must contain only numbers.")]
+		public string ZipCode { get; set; }
 
         [PersonalData]
         public string City { get; set; }

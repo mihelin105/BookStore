@@ -10,8 +10,8 @@ namespace BookStore.Controllers
 	[Authorize(Roles = "Admin")]
 	public class AdminController : Controller
     {
-
-        private readonly RoleManager<IdentityRole> _roleManager;
+		// rad s ulogama u ASP.NET Core Identity , provjerava, stvara i dodjeljuje uloge korisnicima
+		private readonly RoleManager<IdentityRole> _roleManager;
         // access all the users that exist in the database
         private readonly UserManager<DefaultUser> _userManager;
 

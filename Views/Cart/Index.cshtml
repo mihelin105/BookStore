@@ -22,7 +22,10 @@
 						<a class="a-cleanup" asp-controller="Store" asp-action="Details" asp-route-id="@item.Id"> <img src="@item.Book.imageUrl" style="height: 4em" /></a>
 					</td>
 					<td>
-						<a class="a-cleanup" asp-controller="Store" asp-action="Details" asp-route-id="@item.Id">@item.Book.Title</a>
+						<a class="a-cleanup" asp-controller="Store" asp-action="Details" asp-route-id="@item.Id">
+							@item.Book.Title
+						</a>
+
 					</td>
 					<td>
 						@bookTotal.ToString("c");

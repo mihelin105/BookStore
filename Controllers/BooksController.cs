@@ -31,6 +31,7 @@ namespace BookStore.Controllers
 
 
         // GET: Books/Details/5 (accessible to everyone)
+        //[HttpGet("Details/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

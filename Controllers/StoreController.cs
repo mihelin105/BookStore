@@ -40,23 +40,25 @@ namespace BookStore.Controllers
 			return View(await books.ToListAsync());
         }
 
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+		public async Task<IActionResult> Details(int? id)
+		{
+			if (!id.HasValue) // Proper way to check nullable int
+			{
+				return NotFound();
+			}
 
-            var book = await context.Books
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (book == null)
-            {
-                return NotFound();
-            }
+			var book = await context.Books
+				.FirstOrDefaultAsync(m => m.Id == id.Value); // Use id.Value for nullable int
 
-            return View(book);
-        }
+			if (book == null)
+			{
+				return NotFound();
+			}
+
+			return View(book);
+		}
 
 
-    }
+
+	}
 }

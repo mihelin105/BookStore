@@ -4,7 +4,14 @@
 	ViewData["Title"] = "Store";
 }
 
-<h2 class="my-4">Store</h2>
+<section class="hero">
+    <h1>Welcome to Lalia Bookstore 📖✨</h1>
+    <p>Discover your next favorite book from our handpicked selection.</p>
+    <a href="#book-list" class="btn-browse">Browse Books</a>
+
+</section>
+
+
 <div class="bg-light py-3">
     <div class="container">
         <form asp-action="Index" method="get">
@@ -38,26 +45,27 @@
 
 
 
+<div id="book-list" class="container">
+    <div class="row">
+	    @foreach(var book in Model)
+	    {
+		    <div class="col-3">
+			    <div class="card my-2 store-card wrapper">
+				    <a class="a-cleanup" asp-controller="Store" asp-action="Details" asp-route-id="@book.Id">
 
-<div class="row">
-	@foreach(var book in Model)
-	{
-		<div class="col-3">
-			<div class="card my-2 store-card wrapper">
-				<a class="a-cleanup" asp-controller="Store" asp-action="Details" asp-route-id="@book.Id">
+						    <img src="@book.imageUrl" class="card-img-top card-img-custom img-wrapper" /> 
+						    <div class="book-genre">@book.Genre</div>
+				    </a>
 
-						<img src="@book.imageUrl" class="card-img-top card-img-custom img-wrapper" /> 
-						<div class="book-genre">@book.Genre</div>
-				</a>
-
-					<div class="card-body" style="height: 6em">
-						<h5 class="mb-3">@book.Title</h5>
-					</div>
-					<div class="card-body">
-						<span class="card-text">@book.Price.ToString("c")</span>
-						<a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@book.Id" class="btn btn-edit float-right store-btn"><i class="fa-brands fa-opencart"></i></a>
-					</div>
-			</div>
-		</div>
-	}
+					    <div class="card-body" style="height: 6em">
+						    <h5 class="mb-3">@book.Title</h5>
+					    </div>
+					    <div class="card-body">
+						    <span class="card-text">@book.Price.ToString("c")</span>
+						    <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@book.Id" class="btn btn-edit float-right store-btn"><i class="fa-brands fa-opencart"></i></a>
+					    </div>
+			    </div>
+		    </div>
+	    }
+    </div>
 </div>

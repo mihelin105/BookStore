@@ -247,3 +247,68 @@ a.btn-secondary {
         border-color: #4E3220;
     }
 
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Adjusts the height */
+}
+
+.register-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Centers it vertically */
+}
+
+.login-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #a67c52, #d2b48c);
+    color: white;
+}
+
+    .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+
+.btn-browse {
+    padding: 10px 20px;
+    background-color: white;
+    color: #6d4c41;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+    .btn-browse:hover {
+        background: #e0c2a2;
+    }
+
+
+html {
+    scroll-behavior: smooth;
+}
