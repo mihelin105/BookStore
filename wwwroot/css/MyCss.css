@@ -1,36 +1,36 @@
 ﻿/* General Page Background */
 body {
-    background-color: #F5ECE0; /* Soft beige */
-    color: #5A4635; /* Dark brown text */
+    background-color: #F5ECE0;
+    color: #5A4635; 
     font-family: 'Georgia', serif;
 }
 
 /* Navbar Styling */
 .navbar {
-    background-color: #5A4635 !important; /* Dark brown navbar */
+    background-color: #5A4635 !important; 
     padding: 15px;
 }
 
     .navbar a {
-        color: #E6D5B8 !important; /* Beige text */
+        color: #E6D5B8 !important; 
         font-size: 18px;
     }
 
 .navbar-brand img {
-    max-height: 60px; /* Adjusts logo size */
+    max-height: 60px;
 }
 
 /* Search Bar */
 .search-bar {
-    background-color: #F5ECE0; /* Light beige */
-    border: 2px solid #8B5E3B; /* Darker brown border */
+    background-color: #F5ECE0;
+    border: 2px solid #8B5E3B; 
     padding: 10px;
     width: 100%;
     border-radius: 5px;
 }
 
     .search-bar::placeholder {
-        color: #8B5E3B; /* Dark brown text */
+        color: #8B5E3B; 
     }
 
 /*  Search Button */
@@ -43,7 +43,7 @@ body {
 }
 
     .btn-search:hover {
-        background-color: #6F4E37; /* Slightly darker brown */
+        background-color: #6F4E37;
     }
 
 /* Cart Button */
@@ -68,7 +68,7 @@ body {
 
 /* Buttons */
 .btn-primary {
-    background-color: #E6D5B8; /* Beige */
+    background-color: #E6D5B8; 
     color: #5A4635;
     border: none;
 }
@@ -78,7 +78,7 @@ body {
     }
 
 .btn-secondary {
-    background-color: #6F4E37; /* Warm brown */
+    background-color: #6F4E37;
     color: white;
     border: none;
 }
@@ -218,32 +218,32 @@ input[type=number]::-webkit-outer-spin-button{
 }
 
 .bg-light {
-    border-bottom: 2px solid #ddd; /* Light gray border */
+    border-bottom: 2px solid #ddd; 
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* More visible shadow */
     padding: 15px; /* Adds space inside the box */
 }
 
-/* Make the filter button a nice beige */
+/* filter bttn*/
 button.btn-primary {
-    background-color: #E6D5B8; /* Soft beige */
-    border-color: #D9C4A7; /* Slightly darker beige */
-    color: #5A4635; /* Dark brown text */
+    background-color: #E6D5B8; 
+    border-color: #D9C4A7; 
+    color: #5A4635; 
 }
 
     .btn-primary:hover {
-        background-color: #D9C4A7; /* Slightly darker beige on hover */
+        background-color: #D9C4A7; 
         border-color: #C7B299;
     }
 
 /* Make the clear button brown */
 a.btn-secondary {
-    background-color: #6F4E37; /* Warm brown */
+    background-color: #6F4E37; 
     border-color: #5A3C25;
-    color: white; /* White text for contrast */
+    color: white; 
 }
 
     .btn-secondary:hover {
-        background-color: #5A3C25; /* Darker brown on hover */
+        background-color: #5A3C25;
         border-color: #4E3220;
     }
 
@@ -251,7 +251,7 @@ a.btn-secondary {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh; /* Adjusts the height */
+    min-height: 80vh; 
 }
 
 .register-form {
@@ -277,7 +277,51 @@ a.btn-secondary {
     width: 40%;
 }
 
+
 .hero {
+    background: url('https://c4.wallpaperflare.com/wallpaper/728/926/542/library-ladders-candles-shelves-wallpaper-preview.jpg') no-repeat center center;
+    background-size: cover;
+    height: 450px; /* Increase height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+    .hero h1 {
+        font-size: 3rem; /* Increase title size */
+        font-weight: bold;
+    }
+
+    .hero p {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+.btn-browse {
+    background-color: #674928;
+    color: #E6D5B8;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+    .btn-browse:hover {
+        background-color: #d2b48c; 
+    }
+
+
+
+
+/*.hero {
     text-align: center;
     padding: 50px 20px;
     background: linear-gradient(to right, #a67c52, #d2b48c);
@@ -292,9 +336,9 @@ a.btn-secondary {
     .hero p {
         font-size: 1.2rem;
         margin-bottom: 20px;
-    }
+    }*/
 
-.btn-browse {
+/*.btn-browse {
     padding: 10px 20px;
     background-color: white;
     color: #6d4c41;
@@ -306,7 +350,7 @@ a.btn-secondary {
 
     .btn-browse:hover {
         background: #e0c2a2;
-    }
+    }*/
 
 
 html {
